@@ -16,12 +16,13 @@ export default {
   },
   data() {
     return {
+      //exp of data middle man (class binding)
       hovered: false
     };
   },
   methods: {
       selectCigar() {
-      this.$emit('selected-cigar', this.cigar);
+          this.$emit('selected-cigar', this.cigar);
     }
   }
 }

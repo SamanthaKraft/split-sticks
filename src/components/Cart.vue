@@ -48,11 +48,16 @@
                 this.$emit("update:forceOpen", this.visible);
             },
             handleClickEvent(e){
+                //clicked anywhere
+                //don't close on first click (which tech outside container)
                 if(this.iconClicked){
                     this.iconClicked=false;
+                    //return without closing
                     return;
                 }
-                if (this.visible==true && this.$refs.clickOutsideRef && !this.$refs.clickOutsideRef.contains(e.target)) {
+                if (this.$refs.clickOutsideRef && !this.$refs.clickOutsideRef.contains(e.target)) {
+
+                    //controls own state and lets parent know about changes
                     this.visible=false;
                     this.$emit("update:forceOpen", this.visible);
                 }

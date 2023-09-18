@@ -3,8 +3,10 @@
         <div ref="clickOutsideRef" class="popup-body" >
             <p>{{ item.name }}</p>
             <p>{{ item.country }}</p>
+            <!-- example of dynamic child-child component -->
             <span><component :country="item.country" :is="dynamicComponent"></component></span>
             <div class="cigar-img"><img :src="item.img" alt="Cigar Image"></div>
+            <!-- example of using if/else for dynamic dom building -->
             <div v-if="item.purchaseSplit==0">
                 <p>No one has decided to split this item yet</p>
                 <p>Click on the Split button to buy half a box. You won't get charged until the other half has been bought by another user.</p>
@@ -13,6 +15,7 @@
                 <p>User {{ item.purchasers[0] }} wants to split this box!</p>
                 <p>Click on the Purchase button to split this item with them. You will be charged and can pick up your item at our shop.</p>
             </div>
+            <!-- dynamic button -->
             <button class="purchase-btn" @click="addToCart">{{ item.purchaseSplit == 0?"Split":"Purchase" }}</button>
         </div>
     </div>
@@ -37,7 +40,9 @@ export default{
     },
     methods:{
         handleClickOutside(e) {
+            //timed out in parent so that this.poppedUp will = false on the first click
             if (this.poppedUp==true && this.$refs.clickOutsideRef && !this.$refs.clickOutsideRef.contains(e.target)) {
+                //closes popup from outside. notice no data, popup is controlled externally mostly, with clickOutside being exception
                 this.$emit('update:poppedUp', false);
             }
         },

@@ -2,10 +2,10 @@
   <div class="">
     <h2>Our Inventory</h2>
     <div class="inventory-wrap" style="flex-wrap:wrap;">
-
+<!-- really simple container that could be placed on mutiple apps (reusablitly). easier to style collab and read IMO. 
+  Faster if Cigar component is only thing re-rendering, don't need to re-render entire list  -->
       <Cigar 
         v-for="cigar in cigars"
-        :key="cigar.id"
         :cigar="cigar"
         @selected-cigar="selectCigar"
       />
@@ -24,8 +24,8 @@
       cigars: Array
     },
     methods:{
-      selectCigar(payload){
-        this.$emit('selected-cigar',payload);
+      selectCigar(cigar){
+        this.$emit('selected-cigar',cigar);
       }
     }
   }
@@ -41,7 +41,6 @@
     overflow: auto; 
    justify-content: center;
   padding: 10px; 
-
 
   }
 

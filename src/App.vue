@@ -4,7 +4,7 @@
   <div>
     <Cart v-model:cartList="cartItems" @deleteItem="removeFromList" @checkout="updateInventory" v-model:forceOpen="openCart"/>
     <CigarList :cigars="cigarList" @selected-cigar="selectCigar"/>
-    <Popup v-model:poppedUp="popupPurchase" :item="selectedItem" @cart-item="addToCart" :dynamicComponent="countryComp"></Popup>
+    <Popup v-model:poppedUp="openPopup" :item="selectedItem" @cart-item="addToCart" :dynamicComponent="countryComp"></Popup>
   </div>
   
 </template>
@@ -12,9 +12,11 @@
 <script>
 //import all components
 import CigarList from './components/CigarList.vue';
-import Cart from '/components/Cart.vue';
+import Cart from './components/Cart.vue';
 import Popup from '/components/PurchasePopup.vue';
-import Country from "/components/Country.vue"
+import Country from "./components/Country.vue"
+
+//My classes
 import { Cigar } from './Models.js';
 import { User } from './Models.js';
 
@@ -31,11 +33,10 @@ export default {
       cigarList: [
 
       ],
-      popupPurchase:false,
+      openPopup:false,
       selectedItem:Cigar,
       cartItems: [], 
       myAccount:new User("23","Sam",this.cartItems),
-      showCart:false,
       openCart:false,
       countryComp:Country
     }
@@ -43,10 +44,14 @@ export default {
   watch:{
 
   },
+
   methods:{
+      //is called by directive -select cigar event passed from Cigar component
     selectCigar(item){
+      //was put in for lifecycle bug. popup is controlled from outside itself as well as inside itself via eventlistener
+      //without timeout popup closes itself because of clickoutside listener
         setTimeout(() => {
-        this.popupPurchase = true;
+        this.openPopup = true;
         this.selectedItem = item;
       }, 0);
     },

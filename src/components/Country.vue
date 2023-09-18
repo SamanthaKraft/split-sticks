@@ -34,6 +34,7 @@
             if(!this.countryData){
                 this.fetchCountryData();
                //had the  this.toggleInfo=true; here but needed to move it
+               //as soon as statch changes, component gets rebuilt
             }else{
                 this.toggleInfo=!this.toggleInfo;
             }
@@ -66,6 +67,7 @@
         } catch (error) {
           console.error(error);
           // Add more error handling
+          //update comp to return an div that informs user it's not working
         }
       }
     },
