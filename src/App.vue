@@ -78,7 +78,7 @@ export default {
       this.cartItems.splice(0, this.cartItems.length);
     }
   },
-
+// grab inventory data and assignt to new Cigar
   async created() {
     try {
       const response = await fetch('/data.json');
