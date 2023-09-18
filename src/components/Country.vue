@@ -33,7 +33,7 @@
         toggleCountry(){
             if(!this.countryData){
                 this.fetchCountryData();
-                this.toggleInfo=true;
+               //had the  this.toggleInfo=true; here but needed to move it
             }else{
                 this.toggleInfo=!this.toggleInfo;
             }
@@ -62,6 +62,7 @@
       async fetchCountryData() {
         try {
           this.countryData = await this.getCountry(this.country);
+          this.toggleInfo=true;
         } catch (error) {
           console.error(error);
           // Add more error handling
