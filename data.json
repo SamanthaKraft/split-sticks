@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Habana Classico",
+        "img":"src/assets/imgs/cigar-one.png",
+        "purchasers": ["John"],
+        "country":"Cuba",
+        "price": "$50"
+    },
+    {
+        "id": 2,
+        "name": "Rockey Patel",
+        "img":"src/assets/imgs/cigar-four.png",
+        "purchasers": [],
+        "country":"Honduras",
+        "price": "$40"
+    },
+    {
+        "id": 3,
+        "name": "LFD",
+        "img":"src/assets/imgs/cigar-three.png",
+        "purchasers": [],
+        "country":"Dominican Republic",
+        "price": "$55"
+    },
+    {
+        "id": 4,
+        "name": "My Father Le Boujue",
+        "img":"src/assets/imgs/cigar-four.png",
+        "purchasers": ["David"],
+        "country":"Nicaragua",
+        "price": "$45"
+    },
+    {
+        "id": 5,
+        "name": "Roma Craft",
+        "img":"src/assets/imgs/cigar-one.png",
+        "purchasers": [],
+        "country":"Mexico",
+        "price": "$52"
+    },
+    {
+        "id": 6,
+        "name": "Placencia",
+        "img":"src/assets/imgs/cigar-three.png",
+        "purchasers": [],
+        "country":"Ecuador",
+        "price": "$53"
+    },
+    {
+        "id": 7,
+        "name": "Drew Estate",
+        "img":"src/assets/imgs/cigar-three.png",
+        "purchasers": ["Jack"],
+        "country":"Peru",
+        "price": "$42"
+    },
+    {
+        "id": 8,
+        "name": "Romeo y Juliet",
+        "img":"src/assets/imgs/cigar-one.png",
+        "purchasers": [],
+        "country":"Brazil",
+        "price": "$48"
+    }
+]
