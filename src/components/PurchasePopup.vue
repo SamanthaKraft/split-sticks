@@ -1,3 +1,22 @@
+<template>
+    <div class="popup-container" v-if="poppedUp">
+        <div ref="clickOutsideRef" class="popup-body" >
+            <p>{{ item.name }}</p>
+            <p>{{ item.country }}</p>
+            <span><component :country="item.country" :is="dynamicComponent"></component></span>
+            <div class="cigar-img"><img :src="item.img" alt="Cigar Image"></div>
+            <div v-if="item.purchaseSplit==0">
+                <p>No one has decided to split this item yet</p>
+                <p>Click on the Split button to buy half a box. You won't get charged until the other half has been bought by another user.</p>
+            </div>
+            <div v-else>
+                <p>User {{ item.purchasers[0] }} wants to split this box!</p>
+                <p>Click on the Purchase button to split this item with them. You will be charged and can pick up your item at our shop.</p>
+            </div>
+            <button class="purchase-btn" @click="addToCart">{{ item.purchaseSplit == 0?"Split":"Purchase" }}</button>
+        </div>
+    </div>
+</template>
 <script>
 
 export default{
@@ -35,25 +54,7 @@ export default{
   },
 }
 </script>
-<template>
-    <div class="popup-container" v-if="poppedUp">
-        <div ref="clickOutsideRef" class="popup-body" >
-            <p>{{ item.name }}</p>
-            <p>{{ item.country }}</p>
-            <span><component :country="item.country" :is="dynamicComponent"></component></span>
-            <div class="cigar-img"><img :src="item.img" alt="Cigar Image"></div>
-            <div v-if="item.purchaseSplit==0">
-                <p>No one has decided to split this item yet</p>
-                <p>Click on the Split button to buy half a box. You won't get charged until the other half has been bought by another user.</p>
-            </div>
-            <div v-else>
-                <p>User {{ item.purchasers[0] }} wants to split this box!</p>
-                <p>Click on the Purchase button to split this item with them. You will be charged and can pick up your item at our shop.</p>
-            </div>
-            <button class="purchase-btn" @click="addToCart">{{ item.purchaseSplit == 0?"Split":"Purchase" }}</button>
-        </div>
-    </div>
-</template>
+
 <style>
 .popup-container {
     position: fixed;  

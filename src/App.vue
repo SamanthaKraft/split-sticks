@@ -10,11 +10,11 @@
 </template>
 
 <script>
-
+//import all components
 import CigarList from './components/CigarList.vue';
-import Cart from './components/Cart.vue';
-import Popup from './components/PurchasePopup.vue';
-import Country from "./components/Country.vue"
+import Cart from '/components/Cart.vue';
+import Popup from '/components/PurchasePopup.vue';
+import Country from "/components/Country.vue"
 import { Cigar } from './Models.js';
 import { User } from './Models.js';
 

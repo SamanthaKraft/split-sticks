@@ -1,3 +1,12 @@
+<template>
+  <div @mouseenter="hovered=true" @mouseleave="hovered=false" @click="selectCigar" :class="[{ overlay: hovered }, 'item-container']">
+    <div class="split-prompt" v-if="hovered">Split This Item with Someone!</div>
+    <h3>{{ cigar.name }}</h3>
+    <p>Price: {{ cigar.price }}</p>
+    <div class="cigar-img"><img :src="cigar.img" alt="Cigar Image"></div>
+    <p>Purchasers: {{ cigar.purchasers.join(', ') }}</p>
+  </div>
+</template>
 <script>
 
 export default {
@@ -17,16 +26,6 @@ export default {
   }
 }
 </script>
-
-<template>
-  <div @mouseenter="hovered=true" @mouseleave="hovered=false" @click="selectCigar" :class="[{ overlay: hovered }, 'item-container']">
-    <div class="split-prompt" v-if="hovered">Split This Item with Someone!</div>
-    <h3>{{ cigar.name }}</h3>
-    <p>Price: {{ cigar.price }}</p>
-    <div class="cigar-img"><img :src="cigar.img" alt="Cigar Image"></div>
-    <p>Purchasers: {{ cigar.purchasers.join(', ') }}</p>
-  </div>
-</template>
 
 <style scoped>
 .item-container{
