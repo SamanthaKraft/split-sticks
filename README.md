@@ -1,29 +1,24 @@
-# vueTest
+# SplitSticks
 
-This template should help get you started developing with Vue 3 in Vite.
+Screenshots
 
-## Recommended IDE Setup
+## Main Page
+![image](https://github.com/SamanthaKraft/split-sticks/assets/14181602/8d19aeb0-122a-401a-9900-b0e6b8762088)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Pop-Up
+![image](https://github.com/SamanthaKraft/split-sticks/assets/14181602/59c5bdb3-e38f-4166-a411-0a93880b17da)
 
-## Customize configuration
+## Country Api
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![image](https://github.com/SamanthaKraft/split-sticks/assets/14181602/0306cc8e-b2df-4c7b-9327-8384c9a7e1ee)
 
-## Project Setup
+## Cart
+![image](https://github.com/SamanthaKraft/split-sticks/assets/14181602/196e86df-e237-421d-b2d4-eb7198745f38)
 
-```sh
-npm install
-```
+## Updated with User 'Sam'
+![image](https://github.com/SamanthaKraft/split-sticks/assets/14181602/6d9e0150-0528-4c8d-a9eb-88889a42d340)
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+
